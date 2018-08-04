@@ -1,0 +1,12 @@
+<p> Questions/new </p>
+
+<%= form_for @question do |f| %>
+
+  <%= f.label :タイトル %>
+  <%= f.text_field :title %>
+
+  <%= f.label :質問内容 %>
+  <%= f.text_field :content %>
+
+  <%= f.submit("質問を投稿する") %>
+<% end %>
