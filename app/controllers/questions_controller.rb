@@ -10,24 +10,26 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.new(questions_params)
+    question = Question.new(question_params)
     redirect_after_question_create(question)
   end
 
   def show
     @question = Question.find(params[:id])
+    @replies = @question.replies
+    @reply = Reply.new
   end
 
   private
 
-  def questions_params
+  def question_params
     params.require(:question).permit(:title, :content)
   end
 
   def redirect_after_question_create(question)
     if question.save
       flash[:success] = '質問が投稿されました!'
-      redirect_to(root_url) && return
+      redirect_to(root_url)
     else
       flash[:danger] = question.errors.full_messages
       @question = Question.new

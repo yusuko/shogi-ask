@@ -3,3 +3,19 @@
 <%= @question.status %>
 <%= @question.user_id %>
 <%= @question.created_at %>
+
+<p> Replies/index </p>
+<%= @replies.count %>
+<%= render @replies %>
+
+<p> Replies/new </p>
+
+<%= form_for @reply do |f| %>
+
+  <%= f.label :あなたの回答 %>
+  <%= f.text_field :content %>
+
+  <%= f.hidden_field :question_id, value: @question.id %>
+
+  <%= f.submit("回答する") %>
+<% end %>
