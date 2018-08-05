@@ -11,6 +11,7 @@ gem 'dotenv-rails' # 環境変数を簡単に利用できるgem
 gem 'faker', '1.7.3'
 gem 'jbuilder',     '2.7.0'
 gem 'jquery-rails', '4.3.1'
+gem 'kaminari'
 gem 'mini_magick', '4.7.0'
 gem 'omniauth'
 gem 'omniauth-twitter'
