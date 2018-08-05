@@ -14,6 +14,10 @@ class QuestionsController < ApplicationController
     redirect_after_question_create(question)
   end
 
+  def show
+    @question = Question.find(params[:id])
+  end
+
   private
 
   def questions_params
