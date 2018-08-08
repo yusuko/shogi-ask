@@ -1,5 +1,12 @@
-<%= link_to question.title, question %>
-<%= question.content %>
-<%= question.status %>
-<%= question.user_id %>
-<%= question.created_at %>
+<li id="question-<%= question.id %>">
+  <p class="text">
+    <% if question.status == 'unsolved' %>
+    <span class="status text">受付中</span>
+    <% else %>
+    <span class="status">解決済み</span>
+    <% end %>
+    <span class="title"> <%= link_to question.title, question %> </span>
+  </p>
+  <p><%= question.user_id %></p>
+  <p><%= question.created_at %></p>
+</li>

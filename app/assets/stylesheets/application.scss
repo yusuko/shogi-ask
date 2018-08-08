@@ -5,3 +5,26 @@
  body {
    padding-top: 80px;
  }
+
+ ol {
+   list-style: none;
+ }
+
+ li {
+   border-top: solid 0.5px 	#DCDCDC;
+ }
+
+ .title {
+   font-size: 21px;
+   margin-left: 30px;
+ }
+
+ .status {
+   float: left;
+   font-size: 14px;
+   margin-top: 4px;
+ }
+
+ .text {
+   display: inline;
+ }
