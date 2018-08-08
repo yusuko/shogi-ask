@@ -29,7 +29,18 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_mailer.raise_delivery_errors = true
+
+   ActionMailer::Base.delivery_method = :smtp
+   ActionMailer::Base.smtp_settings = {
+     :address => "smtp.gmail.com", # smtpサーバーのホスト名
+     :port => 587,
+     :authentication => :plain,
+     :user_name => "送信元のメールアドレスのアカウント名",
+     :password => "メールアカウントのパスワード"
+   }
 
   config.action_mailer.perform_caching = false
 

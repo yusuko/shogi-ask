@@ -1,6 +1,7 @@
 # = QuestionsController
 
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
   def index
     @questions = Question.paginate(page: params[:page], per_page: 20)
   end

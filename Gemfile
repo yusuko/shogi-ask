@@ -8,6 +8,7 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'carrierwave',             '1.2.2'
 gem 'coffee-rails', '4.2.2'
 gem 'dotenv-rails' # 環境変数を簡単に利用できるgem
+gem 'devise'
 gem 'faker', '1.7.3'
 gem 'jbuilder',     '2.7.0'
 gem 'jquery-rails', '4.3.1'
