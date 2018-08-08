@@ -1,4 +1,4 @@
-<li id="question-<%= question.id %>">
+<li class="question_list id="question-<%= question.id %>">
   <p class="text">
     <% if question.status == 'unsolved' %>
     <span class="status text">受付中</span>
@@ -8,5 +8,5 @@
     <span class="title"> <%= link_to question.title, question %> </span>
   </p>
   <p><%= question.user_id %></p>
-  <p><%= question.created_at %></p>
+  <p><%= time_ago_in_words(question.created_at) %> 前に投稿</p>
 </li>

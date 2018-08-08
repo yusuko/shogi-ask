@@ -10,7 +10,7 @@
    list-style: none;
  }
 
- li {
+ .question_list {
    border-top: solid 0.5px 	#DCDCDC;
  }
 
@@ -27,4 +27,11 @@
 
  .text {
    display: inline;
+ }
+
+/* questions#show */
+ .answer-count {
+   border-top: solid 0.5px 	#DCDCDC;
+   margin-top: 10px;
+   font-size: 20px;
  }

@@ -1,13 +1,22 @@
-<%= link_to @question.title, @question %>
-<%= @question.content %>
-<%= @question.status %>
+<h1><%= link_to @question.title, @question %></h1>
+<p>
+  <% if @question.status == 'unsolved' %>
+  <p class="status-show">受付中</p>
+  <% else %>
+  <span class="status-show">解決済み</span>
+  <% end %>
+</p>
+<p><%= time_ago_in_words(@question.created_at) %> 前に投稿</p>
+
+<p><%= @question.content %></p>
+
 <%= @question.user_id %>
-<%= @question.created_at %>
 
 <p> Replies/index </p>
-<%= @replies.count %>
+<p class="answer-count"><%= @replies.count %> 件の回答 </p>
+<ol class="reply">
 <%= render @replies %>
-
+</ol>
 <p> Replies/new </p>
 
 <%= form_for @reply do |f| %>
