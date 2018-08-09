@@ -1,7 +1,7 @@
 class RepliesController < ApplicationController
   before_action :authenticate_user!, only: [:create]
   def create
-    reply = Reply.new(reply_params)
+    reply = Reply.new(reply_params.merge(user_id: current_user.id))
     redirect_after_reply_create(reply)
   end
 
