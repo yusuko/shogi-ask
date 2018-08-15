@@ -1,0 +1,13 @@
+
+<%= form_for(@user, url: users_setting_profile_path, method: :post) do |f| %>
+
+  <%= f.label :名前 %>
+  <%= f.text_field :name %>
+
+  <%= f.label :プロフィール文 %>
+  <%= f.text_field :sentence %>
+
+  <%= f.file_field :image %>
+
+  <%= f.submit("プロフィールを更新する") %>
+<% end %>

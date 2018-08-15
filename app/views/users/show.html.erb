@@ -1,0 +1,10 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+<% if @user == current_user %>
+<p><%= link_to "プロフィールの編集",users_setting_profile_path %></p>
+<% end %>
+<p><%= image_tag('default_user_image.png',  :size => "100x100", :alt => "アイコン") %></p>
+<p><%= image_tag(@user.image.url) %></p>
+<p><%= @user.name %></p>
+<p><%= @user.sentence %></p>
+<p><%= @user.scores %></p>

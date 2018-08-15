@@ -10,7 +10,12 @@
 
 <p><%= @question.content %></p>
 <p><%= @question.categories.pluck(:name).join(", ") %></p>
-<%= @question.user_id %>
+<div class="float-left">
+  <% if @question.user %>
+  <%= image_tag(@question.user.image.url, :size => "20x20") %>
+  <%= @question.user.name %>
+  <% end %>
+</div>
 
 <p> Replies/index </p>
 <p class="answer-count"><%= @replies.count %> 件の回答 </p>
