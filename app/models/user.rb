@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :image, UserImageUploader
   has_many :questions
   has_many :replies
   # Include default devise modules. Others available are:
