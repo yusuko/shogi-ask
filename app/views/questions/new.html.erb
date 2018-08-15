@@ -8,5 +8,11 @@
   <%= f.label :質問内容 %>
   <%= f.text_field :content %>
 
+  <%= fields_for :category ,(@categroy) do |category| %>
+
+   <%= category.label :カテゴリー %>
+   <%= category.collection_select :id, Category.all, :id, :name %>
+   <% end %>
+
   <%= f.submit("質問を投稿する") %>
 <% end %>

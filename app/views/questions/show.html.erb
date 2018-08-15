@@ -9,7 +9,7 @@
 <p><%= time_ago_in_words(@question.created_at) %> 前に投稿</p>
 
 <p><%= @question.content %></p>
-
+<p><%= @question.categories.pluck(:name).join(", ") %></p>
 <%= @question.user_id %>
 
 <p> Replies/index </p>

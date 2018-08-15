@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180809043709) do
+ActiveRecord::Schema.define(version: 20180809052113) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "kind"
+  end
+
+  create_table "question_categories", force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.integer "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,6 +65,9 @@ ActiveRecord::Schema.define(version: 20180809043709) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index [nil, nil], name: "index_users_on_category_id_and_question_id", unique: true
+    t.index [nil], name: "index_users_on_category_id"
+    t.index [nil], name: "index_users_on_question_id"
   end
 
 end

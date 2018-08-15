@@ -7,6 +7,9 @@
     <% end %>
     <span class="title"> <%= link_to question.title, question %> </span>
   </p>
+  <% if question.categories.count >= 1 %>
+    <p><%= question.categories.pluck(:name).join(", ") %></p>
+  <% end %>
   <p><%= question.user_id %></p>
   <p><%= time_ago_in_words(question.created_at) %> 前に投稿</p>
 </li>
