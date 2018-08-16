@@ -1,18 +1,26 @@
-<p> Questions/new </p>
+<div class="">
+  <%= form_for @question do |f| %>
 
-<%= form_for @question do |f| %>
+  <div class="form-group">
+    <%= f.label :タイトル %>
+    <%= f.text_field :title, class: 'form-control', placeholder: "タイトル：わからないことや聞きたいことを10文字以上で書いてください。"  %>
+  </div>
 
-  <%= f.label :タイトル %>
-  <%= f.text_field :title %>
+  <div class="form-group">
+    <%= fields_for :category ,(@categroy) do |category| %>
 
-  <%= f.label :質問内容 %>
-  <%= f.text_field :content %>
+     <%= category.label :カテゴリー %>
+     <%= category.collection_select :id, Category.all, :id, :name %>
+     <% end %>
+  </div>
 
-  <%= fields_for :category ,(@categroy) do |category| %>
+  <div class="form-group">
+    <%= f.label :質問内容 %>
+    <%= f.text_area :content, class: 'form-control content-form',placeholder: "わからないことや聞きたいことの詳細を30~5000文字で書いてください。
+具体的な自分の将棋の強さ(初心者、5級、４段等)、どこが聞きたいことなのかを具体的に書くと回答されやすくなります。" %>
+  </div>
 
-   <%= category.label :カテゴリー %>
-   <%= category.collection_select :id, Category.all, :id, :name %>
-   <% end %>
+     <%= f.submit "質問を投稿する", class: "btn btn-primary" %>
+  <% end %>
 
-  <%= f.submit("質問を投稿する") %>
-<% end %>
+</div>
