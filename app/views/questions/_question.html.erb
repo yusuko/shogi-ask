@@ -1,21 +1,29 @@
-<li class="question_list id="question-<%= question.id %>">
-  <p class="text">
-    <% if question.status == 'unsolved' %>
-    <span class="status text">受付中</span>
-    <% else %>
-    <span class="status">解決済み</span>
-    <% end %>
-    <span class="title"> <%= link_to question.title, question %> </span>
-  </p>
-  <% if question.categories.count >= 1 %>
-    <p><%= question.categories.pluck(:name).join(", ") %></p>
-  <% end %>
-  <div class="float-left">
-    <% if question.user %>
-    <%= image_tag(question.user.image.url, :size => "20x20") %>
-    <%= question.user.name %>
-    <% end %>
+<li class="id="question-<%= question.id %>">
+  <div class="container">
+  <!--
+
+-->
+    <div class="row">
+      <div class="col-sm-1 text-center question_list">
+        <p class ="status bg-success">受付中</p>
+      <dl>
+        <dt class ="answer-title">回答</dt>
+          <dd class="reply-count"><%= question.replies.count %></dd>
+      </dl>
+    </div>
+      <div class="col-sm-7 question_list">
+        <h2 class="title"> <%= link_to question.title, question %> </h2>
+        <% if question.categories.count >= 1 %>
+        <span class="category label"><%= question.categories.pluck(:name).join(", ") %></span>
+        <% end %>
+        <ul class="question-bottom text-right">
+          <% if question.user %>
+          <%= link_to image_tag(question.user.image.url, :size => "20x20"),  question.user %>
+          <li class="index-user-name"><%= question.user.name %></li>
+          <% end %>
+          <li class="index-time"><%= time_ago_in_words(question.created_at) %>前</li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <p><%= question.replies.count %>件の回答</p>
-  <p><%= time_ago_in_words(question.created_at) %> 前に投稿</p>
 </li>

@@ -6,27 +6,71 @@
    padding-top: 80px;
  }
 
- ol {
+ ol, li {
    list-style: none;
  }
+
+ /* questions#index */
 
  .question_list {
    border-top: solid 0.5px 	#DCDCDC;
  }
 
  .title {
-   font-size: 21px;
-   margin-left: 30px;
+   font-size: 18px;
+   margin-top: 15px;
+   margin-bottom: 20px
+ }
+
+ .answer-title {
+   font-size: 10px;
+ }
+
+ .category {
+   font-size: 15px;
+   color: #545b67;
+   background-color: #CAE2F0;
+   border: 1px solid #b2cdde;
+   font-weight: 400;
  }
 
  .status {
-   float: left;
+   background-color: #f5f5f5;
    font-size: 14px;
-   margin-top: 4px;
+   margin-top: 15px;
  }
 
  .text {
    display: inline;
+ }
+
+ .left-side {
+   width: 60px;
+ }
+
+
+ .reply-count {
+   font-size: 25px;
+   margin-top: 8px;
+ }
+
+ .question-bottom li {
+   display: inline-block;
+ }
+
+ .index-profile {
+
+ }
+
+ .index-user-name {
+   margin-right: 0px;
+   font-weight: 400;
+ }
+
+ .index-time {
+   margin-right: 0px;
+   margin-bottom: 15px;
+   font-weight: 400;
  }
 
 /* questions#show */
