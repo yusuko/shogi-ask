@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
 
   def create
     question = Question.new(question_params.merge(user_id: current_user.id))
-    redirect_after_question_create(question, category_params[:id].to_i)
+    redirect_after_question_create(question, category_params.to_i)
   end
 
   def show
@@ -25,7 +25,7 @@ class QuestionsController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:id)
+    params.require(:category)
   end
 
   def question_params

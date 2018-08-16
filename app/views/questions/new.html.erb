@@ -7,20 +7,24 @@
   </div>
 
   <div class="form-group">
-    <%= fields_for :category ,(@categroy) do |category| %>
-
-     <%= category.label :カテゴリー %>
-     <%= category.collection_select :id, Category.all, :id, :name %>
-     <% end %>
+    <p class="control-label"><b>カテゴリー</b></p>
+    <div class="form-inline">
+      <label class="checkbox-inline"><input type="checkbox" name="category" value= 1> 勉強法</label>
+      <label class="checkbox-inline"><input type="checkbox" name="category" value= 2> 定跡</label>
+      <label class="checkbox-inline"><input type="checkbox" name="category" value= 3> プロ棋士</label>
+      <label class="checkbox-inline"><input type="checkbox" name="category" value= 4> プロの対局</label>
+      <label class="checkbox-inline"><input type="checkbox" name="category" value= 5> 自分の対局</label>
+      <label class="checkbox-inline"><input type="checkbox" name="category" value= 6> その他</label>
+    </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :質問内容 %>
+    <%= f.label :質問 %>
     <%= f.text_area :content, class: 'form-control content-form',placeholder: "わからないことや聞きたいことの詳細を30~5000文字で書いてください。
 具体的な自分の将棋の強さ(初心者、5級、４段等)、どこが聞きたいことなのかを具体的に書くと回答されやすくなります。" %>
   </div>
 
-     <%= f.submit "質問を投稿する", class: "btn btn-primary" %>
+     <%= f.submit "質問する", class: "btn btn-primary" %>
   <% end %>
 
 </div>
