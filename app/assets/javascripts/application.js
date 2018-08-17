@@ -21,12 +21,12 @@ jQuery(document).ready(function(){
     if ($(this).hasClass('open'))
       {
         $(this).removeClass('open')
-        $('.reply-form').show();
+        $(this).next().show();
       }
     else
       {
         $(this).addClass('open')
-        $('.reply-form').hide();
+        $(this).next().hide();
       }
   })
 
