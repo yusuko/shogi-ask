@@ -105,7 +105,27 @@
   display: none;
 }
 
+
 /* _reply */
  .each-reply {
    padding: 15px 0px 15px 0px;
  }
+
+/* login-form */
+  .devise-heading {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .login-btn {
+    margin-top: 20px;
+  }
+
+  .link-from-devise {
+    margin-top: 20px;
+    & li {
+      margin-left: 10px;
+
+    }
+
+  }
