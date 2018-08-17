@@ -14,3 +14,21 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+jQuery(document).ready(function(){
+
+  $('.comment-post').click(function(){
+    if ($(this).hasClass('open'))
+      {
+        $(this).removeClass('open')
+        $('.reply-form').show();
+      }
+    else
+      {
+        $(this).addClass('open')
+        $('.reply-form').hide();
+      }
+  })
+
+
+ });

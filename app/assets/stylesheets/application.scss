@@ -92,6 +92,19 @@
   padding-bottom: 100px;
 }
 
+.comment-post {
+  padding: 10px 10px;
+  &:hover {
+    text-decoration:none;
+    background-color: #C0C0C0;
+  }
+}
+
+.reply-form {
+  margin-top: 20px;
+  display: none;
+}
+
 /* _reply */
  .each-reply {
    padding: 15px 0px 15px 0px;
