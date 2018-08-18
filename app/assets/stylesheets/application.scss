@@ -9,7 +9,21 @@
  ol, li {
    list-style: none;
  }
+ /* footer */
+ footer {
+   background-color: #464c56;
+   margin-top: 20px;
+   padding: 24px 0px 20px 0px;
+   color: white;
 
+ }
+
+ .about, .contact {
+   color: white;
+   &:hover {
+     color: white;
+   }
+ }
  /* questions#index */
 
  .question_list {
