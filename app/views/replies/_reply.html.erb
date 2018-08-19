@@ -8,6 +8,7 @@
     <li class="reply-count"><%= reply.user.name %></li>
   </ul>
 <%= reply.evaluation %>
+<%= render reply.comments %>
 <span class="comment-post open">コメント投稿</span>
 <div class="reply-form">
   <%= form_for(@comment, url: comments_path(reply)) do |f| %>
