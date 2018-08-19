@@ -10,13 +10,11 @@
 <%= reply.evaluation %>
 <span class="comment-post open">コメント投稿</span>
 <div class="reply-form">
-  <%= form_for @reply do |f| %>
+  <%= form_for(@comment, url: comments_path(reply)) do |f| %>
 
     <div class="form-group">
       <%= f.text_field :content, class: 'form-control', placeholder: "回答に対するコメントを入力してください。"  %>
     </div>
-
-    <%= f.hidden_field :question_id, value: @question.id %>
 
     <%= f.submit "コメントする", class: "btn btn-primary" %>
   <% end %>

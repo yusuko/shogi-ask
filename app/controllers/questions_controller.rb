@@ -20,6 +20,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @replies = @question.replies
     @reply = Reply.new
+    @comment = Comment.new
   end
 
   private

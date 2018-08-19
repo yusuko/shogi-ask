@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'questions#index'
   get '/about' => 'static_pages#about'
   get '/contact' => 'static_pages#contact'
+  post '/replies/:id' => 'comments#create', as: 'comments'
 
   resources :replies, only: [:create]
 
