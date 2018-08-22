@@ -27,7 +27,7 @@ class RepliesController < ApplicationController
       flash[:success] = '回答が投稿されました!'
       question = reply.question
       redirect_to(question)
-    elsep
+    else
       flash[:danger] = reply.errors.full_messages
       question = Question.find(params[:reply][:question_id])
       redirect_to(question)
