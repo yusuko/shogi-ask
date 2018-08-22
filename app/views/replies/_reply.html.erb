@@ -1,4 +1,7 @@
 <li class="each-reply">
+  <% if reply == @question.best_reply %>
+  <p>ベストアンサー</p>
+  <% end %>
   <div class="reply-content">
     <%= simple_format(reply.content) %>
   </div>
@@ -7,6 +10,15 @@
     <li class="reply-count"><%= image_tag(reply.user.image, :size => "30x30") %></li>
     <li class="reply-count"><%= reply.user.name %></li>
   </ul>
+  <% if current_user == @question.user %>
+    <div class="">
+    <% if @question.solved? %>
+      <%= link_to 'ベストアンサーをはずす', delete_best_answer_path(reply), method: :delete %>
+    <% else %>
+      <%= link_to 'ベストアンサーにする', select_best_answer_path(reply), method: :post %>
+    <% end %>
+    </div>
+  <% end %>
 <%= reply.evaluation %>
 <%= render reply.comments %>
 <span class="comment-post open">コメント投稿</span>

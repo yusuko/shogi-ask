@@ -19,7 +19,6 @@
     </ul>
   </div>
 </div>
-
 <div class="container">
   <div class="row">
     <div class="col-sm5">
@@ -31,7 +30,12 @@
       <div class="">
         <p class="reply-heading">回答 <%= @replies.count %> 件</p>
         <ol class="reply">
-          <%= render @replies %>
+          <% if @question.best_reply_id %>
+            <%= render @question.best_reply %>
+            <%= render @replies.where.not(id: @question.best_reply_id) %>
+          <% else %>
+            <%= render @replies %>
+          <% end %>
         </ol>
       </div>
       <%= form_for @reply do |f| %>
