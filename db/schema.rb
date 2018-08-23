@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 20180822134626) do
     t.integer "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id", "question_id"], name: "index_question_categories_on_category_id_and_question_id", unique: true
+    t.index ["category_id"], name: "index_question_categories_on_category_id"
+    t.index ["question_id"], name: "index_question_categories_on_question_id"
   end
 
   create_table "questions", force: :cascade do |t|
