@@ -3,7 +3,7 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!, only: [:create]
   def index
-    @questions = Question.paginate(page: params[:page], per_page: 20).order(id: :desc)
+    @questions = Question.list_with_paginate(params)
   end
 
   def new
