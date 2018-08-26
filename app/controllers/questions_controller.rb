@@ -17,8 +17,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
-    @replies = @question.replies
+    @question = Question.includes(:user).find(params[:id])
+    @replies = @question.replies.includes(:user, :comments)
     @reply = Reply.new
     @comment = Comment.new
   end
