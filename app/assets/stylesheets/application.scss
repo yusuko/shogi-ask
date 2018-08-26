@@ -5,6 +5,7 @@
  body {
    padding-top: 70px;
    letter-spacing: 0.5px;
+   line-height: 1.6;
  }
 
  ol, li {
@@ -49,6 +50,11 @@
     color: #fff;
       & + .answer-heading {
         dt, dd {
+          color: #e9606d;
+        }
+      }
+      & + li {
+        & + li {
           color: #e9606d;
         }
       }
@@ -119,6 +125,34 @@
 
  .show-title {
    font-size: 24px;
+   font-weight: bold;
+ }
+
+ .unsolved-show {
+   background-color: #ddd
+ }
+ .answer-show-title {
+   font-size: 16px;
+   font-weight: bold;
+ }
+ .question-time {
+   font-size: 11px;
+ }
+
+ .list-inline span {
+   float: right;
+ }
+
+ .user-info {
+   margin-top: 13px;
+ }
+
+ .user-profile {
+   margin-left: 175px;
+ }
+
+ .user-name {
+   vertical-align: bottom;
  }
  .answer-count {
    border-top: solid 0.5px 	#DCDCDC;
@@ -142,23 +176,35 @@
 
 .comment-post {
   padding: 10px 10px;
-  &:hover {
-    text-decoration:none;
-    background-color: #C0C0C0;
-  }
+  background-color: #119a8fb3;
 }
 
 .reply-form {
-  margin-top: 20px;
+  margin-top: 50px;
   display: none;
 }
 
 
 /* _reply */
  .each-reply {
-   padding: 30px 0px 20px 0px;
+   padding: 20px 0px 20px 0px;
  }
 
+.reply-user {
+  padding-bottom: 12px;
+}
+
+.best-reply {
+  float: right;
+  color: #e9606d;
+}
+
+.best-answer-title {
+  color: #e9606d;
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 5px
+}
 /* login-form */
   .devise-heading {
     margin-bottom: 20px;

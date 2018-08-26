@@ -1,4 +1,5 @@
 <li class="each-reply">
+  <p class= 'best-answer-title'>ベストアンサー</p>
   <div class="reply-content">
     <%= simple_format(reply.content) %>
   </div>
@@ -10,15 +11,13 @@
 <%= render reply.comments %>
 <span class="comment-post open btn-xs btn-info">コメント投稿</span>
 <% if current_user == @question.user %>
-  <% unless @question.solved? %>
-    <%= link_to 'ベストアンサーにする', select_best_answer_path(reply), method: :post, class: 'best-reply' %>
-  <% end %>
+    <%= link_to 'ベストアンサーをはずす', delete_best_answer_path(reply), method: :delete, class: 'best-reply' %>
 <% end %>
 <div class="reply-form">
   <%= form_for(@comment, url: comments_path(reply)) do |f| %>
 
     <div class="form-group">
-      <%= f.text_area :content, class: 'form-control', placeholder: "回答に対するコメントを入力してください。"  %>
+      <%= f.text_field :content, class: 'form-control', placeholder: "回答に対するコメントを入力してください。"  %>
     </div>
 
     <%= f.submit "コメントする", class: "btn btn-primary" %>

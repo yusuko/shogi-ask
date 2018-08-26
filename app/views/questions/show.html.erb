@@ -1,37 +1,45 @@
 <div class="question-summary">
   <div class="container">
     <div class="row">
-      <div class="col-sm7">
-
+      <div class="col-sm-9 col-sm-offset-1">
+        <div class="full-size">
+          <h1 class="show-title"><%= @question.title %></h1>
+        </div>
+        <div class="row">
+          <div class="col-sm-5">
+            <ul class="list-inline">
+              <% if @question.solved? %>
+                <li class ="status solved">解決済</li>
+              <% else %>
+                <li class ="status unsolved-show">受付中</li>
+              <% end %>
+              <li class ="answer-show-title">回答</li>
+              <li class="reply-count"><%= @question.replies.count %></li>
+              <li class="question-time"><%= time_ago_in_words(@question.created_at) %>前に投稿</li>
+            </ul>
+          </div>
+          <div class="col-sm-7 user-info">
+            <ul class="list-inline pull-right">
+            <li class="user-profile"><%= image_tag(@question.user.image, :size => "30x30") %></li>
+            <li class="user-name"><%= @question.user.name %></li>
+            </ul>
+          </div>
+        </div>
       </div>
-
-    </div>
-    <div class="full-size">
-      <h1 class="show-title"><%= @question.title %></h1>
-    </div>
-    <ul class="list-inline">
-      <li class ="status bg-success">受付中</li>
-      <li class ="answer-title">回答</li>
-      <li class="reply-count"><%= @question.replies.count %></li>
-      <li><%= time_ago_in_words(@question.created_at) %>前に投稿</li>
-      <li class="reply-count"><%= image_tag(@question.user.image, :size => "30x30") %></li>
-      <li class="reply-count"><%= @question.user.name %></li>
-    </ul>
   </div>
+</div>
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-sm5">
-    </div>
-    <div class="col-sm7">
+    <div class="col-sm-9 col-sm-offset-1">
       <div class="question-content">
         <%= simple_format(@question.content) %>
       </div>
       <div class="">
         <p class="reply-heading">回答 <%= @replies.count %> 件</p>
         <ol class="reply">
-          <% if @question.best_reply_id %>
-            <%= render @question.best_reply %>
+          <% if @question.solved? %>
+            <%= render 'replies/best_reply', reply: @question.best_reply %>
             <%= render @replies.where.not(id: @question.best_reply_id) %>
           <% else %>
             <%= render @replies %>
@@ -42,14 +50,14 @@
 
         <div class="form-group">
           <%= f.label :あなたの回答 %>
-          <%= f.text_field :content, class: 'form-control', placeholder: "回答を入力してください。"  %>
+          <%= f.text_area :content, class: 'form-control', placeholder: "回答を入力してください。"  %>
         </div>
 
         <%= f.hidden_field :question_id, value: @question.id %>
 
         <%= f.submit "回答する", class: "btn btn-primary center-block" %>
       <% end %>
-    </div>
 
+    </div>
   </div>
 </div>
