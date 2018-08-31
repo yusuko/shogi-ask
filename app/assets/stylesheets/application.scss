@@ -223,3 +223,28 @@
     }
 
   }
+  /* users#show */
+
+  .edit-profile {
+    padding-top: 40px;
+    font-weight: bold;
+  }
+
+  .current-profile {
+    padding: 10px 0px;
+    font-weight: bold;
+  }
+
+  .user-list {
+    & .sentence {
+      padding-top: 10px;
+    }
+    & li {
+      & .user-naming {
+        padding-left: 20px;
+      }
+      & .user-sentence {
+        padding-left: 38px;
+      }
+    }
+  }
