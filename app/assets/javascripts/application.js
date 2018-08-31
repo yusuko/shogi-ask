@@ -11,11 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
-jQuery(document).ready(function(){
+$(document).on('turbolinks:load',function(){
 
   $('.comment-post').click(function(){
     if ($(this).hasClass('open'))
