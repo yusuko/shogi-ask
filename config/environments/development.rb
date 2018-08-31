@@ -37,9 +37,9 @@ Rails.application.configure do
    ActionMailer::Base.smtp_settings = {
      :address => "smtp.gmail.com", # smtpサーバーのホスト名
      :port => 587,
-     :authentication => :plain,
-     :user_name => "送信元のメールアドレスのアカウント名",
-     :password => "メールアカウントのパスワード"
+     :authentication => :login,
+     :user_name => ENV['DEVELOPMENT_USERNAME'],
+     :password => ENV['DEVELOPMENT_PASSWORD']
    }
 
   config.action_mailer.perform_caching = false
