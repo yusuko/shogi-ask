@@ -1,17 +1,25 @@
-<header class="navbar navbar-fixed-top navbar-default">
+<header class="navbar">
   <div class="container">
-    <%= link_to "Review-Shogi", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "質問を投稿する", new_question_path %></li>
-        <% if user_signed_in? %>
-        <li><%= link_to "プロフィール", current_user %></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-        <li><%= link_to "新規会員登録", new_user_registration_path %></li>
-        <li><%= link_to "ログイン", new_user_session_path %></li>
-        <% end %>
-      </ul>
-    </nav>
+    <div class="row">
+      <div class="col-sm-5">
+        <%= link_to "将棋アスク", root_path, id: "logo" %><span class="subtitle">~将棋のQ&Aサイト~</span>
+      </div>
+      <div class="col-sm-6">
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "質問を投稿する", new_question_path %></li>
+            <% if user_signed_in? %>
+            <li><%= link_to "プロフィール", current_user %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li><%= link_to "新規会員登録", new_user_registration_path %></li>
+            <li><%= link_to "ログイン", new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </nav>
+
+      </div>
+
+    </div>
   </div>
 </header>
