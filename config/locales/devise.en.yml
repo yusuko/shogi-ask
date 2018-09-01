@@ -18,7 +18,7 @@ en:
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
       confirmation_instructions:
-        subject: "Confirmation instructions"
+        subject: "【Asuki】新規登録の確認用URLのお知らせ"
       reset_password_instructions:
         subject: "Reset password instructions"
       unlock_instructions:
