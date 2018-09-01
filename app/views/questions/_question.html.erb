@@ -14,9 +14,7 @@
     </div>
       <div class="col-sm-7 question-list">
         <h2 class="title"> <%= link_to question.title, question %> </h2>
-        <% if question.categories.count >= 1 %>
         <span class="category label"><%= question.categories.pluck(:name).join(", ") %></span>
-        <% end %>
         <ul class="question-bottom text-right">
           <% if question.user %>
           <%= link_to image_tag(question.user.image.url, :size => "20x20"),  question.user %>
