@@ -7,6 +7,7 @@ gem 'bootstrap-sass', '3.3.7'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'carrierwave',             '1.2.2'
 gem 'coffee-rails', '4.2.2'
+gem 'cloudinary'
 gem 'dotenv-rails' # 環境変数を簡単に利用できるgem
 gem 'devise'
 gem 'faker', '1.7.3'
