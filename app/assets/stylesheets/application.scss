@@ -37,6 +37,7 @@
      background-color: #26282b;
    }
  }
+
  /* footer */
  footer {
    background-color: #373b42;
@@ -56,6 +57,19 @@
      color: white;
    }
  }
+
+ /* flash_message */
+ .alert {
+  text-align: center;
+  &-alert{
+    color: white;
+    background-color: red;
+  }
+  &-notice {
+    color: white;
+    background-color: blue;
+  }
+}
  /* questions#new */
  .new-form-title {
    padding-top: 10px;
