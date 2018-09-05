@@ -4,7 +4,7 @@
   </div>
   <ul class="list-inline text-right reply-user">
     <li class="question-time"><%= time_ago_in_words(reply.created_at) %> 前に投稿</li>
-    <li class="reply-count"><%= image_tag(reply.user.image, :size => "30x30") %></li>
+    <li class="reply-count"><%= image_tag(reply.user.image.url, :size => "30x30") %></li>
     <li class="user-name"><%= reply.user.name %></li>
   </ul>
 <%= render reply.comments %>

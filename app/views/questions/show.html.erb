@@ -20,7 +20,7 @@
           </div>
           <div class="col-sm-7 user-info">
             <ul class="list-inline pull-right">
-            <li class="user-profile"><%= image_tag(@question.user.image, :size => "30x30") %></li>
+            <li class="user-profile"><%= image_tag(@question.user.image.url, :size => "30x30") %></li>
             <li class="user-name"><%= @question.user.name %></li>
             </ul>
           </div>
