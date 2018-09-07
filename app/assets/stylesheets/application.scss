@@ -80,7 +80,7 @@
    border-top: solid 0.5px 	#DCDCDC;
  }
 
-  .question-heading, .question-content, .each-reply, .reply-heading, .best-reply-summary {
+  .question-heading, .question-content, .each-reply, .reply-heading, .space-best-reply  {
     border-bottom: solid 1px 	#DCDCDC;
   }
 
@@ -241,9 +241,10 @@
 .best-reply {
   float: right;
   color: #e9606d;
+  padding-top: 10px;
 }
 .best-reply-summary {
-  padding-bottom: 150px;
+  padding-bottom: 100px;
 }
 
 .best-answer-title {
@@ -255,6 +256,10 @@
 
 .comment-line {
   margin-top: 20px;
+}
+
+.space-best-reply {
+  padding-bottom: 20px;
 }
 
 /* _comment */

@@ -8,12 +8,15 @@
     <li class="reply-count"><%= image_tag(reply.user.image.url, :size => "30x30") %></li>
     <li class="user-name"><%= reply.user.name %></li>
   </ul>
-<%= render reply.comments %>
-<div class="comment-line">
-  <span class="comment-post open btn-xs btn-info">コメント投稿</span>
   <% if current_user == @question.user %>
       <%= link_to 'ベストアンサーをはずす', delete_best_answer_path(reply), method: :delete, class: 'best-reply' %>
   <% end %>
+  </li>
+<ul>
+  <%= render reply.comments %>
+</ul>
+<div class="comment-line">
+  <span class="comment-post open btn-xs btn-info">コメント投稿</span>
 </div>
 <div class="reply-form">
   <%= form_for(@comment, url: comments_path(reply)) do |f| %>
@@ -25,4 +28,3 @@
     <%= f.submit "コメントする", class: "btn btn-primary" %>
   <% end %>
 </div>
-</li>

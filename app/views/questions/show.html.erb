@@ -40,6 +40,8 @@
         <ol class="reply">
           <% if @question.solved? %>
             <%= render 'replies/best_reply', reply: @question.best_reply %>
+            <div class="space-best-reply">
+            </div>
             <%= render @replies.where.not(id: @question.best_reply_id) %>
           <% else %>
             <%= render @replies %>
