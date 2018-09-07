@@ -1,3 +1,10 @@
-  <div>
+<li class="each-comment">
+  <ul class="list-inline text-left reply-user">
+    <li class="reply-count"><%= image_tag(comment.user.image.url, :size => "20x20") %></li>
+    <li class=""><%= comment.user.name %></li>
+    <li class="question-time"><%= time_ago_in_words(comment.created_at) %> 前に投稿</li>
+  </ul>
+  <div class="comment-content">
     <%= simple_format(comment.content) %>
   </div>
+</li>

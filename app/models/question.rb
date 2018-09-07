@@ -1,6 +1,5 @@
 class Question < ApplicationRecord
   has_many :replies
-  has_one :best_reply, class_name: "Reply"
   belongs_to :user
   has_many :question_categories
   has_many :categories, through: :question_categories
@@ -20,5 +19,10 @@ class Question < ApplicationRecord
 
   def solved?
     return true if best_reply_id
+  end
+
+  def best_reply
+    id = self.best_reply_id
+    Reply.find_by(id: id)
   end
 end

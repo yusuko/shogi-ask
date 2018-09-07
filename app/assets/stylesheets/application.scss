@@ -81,7 +81,7 @@
  }
 
   .question-heading, .question-content, .each-reply, .reply-heading {
-    border-bottom: solid 0.5px 	#DCDCDC;
+    border-bottom: solid 1px 	#DCDCDC;
   }
 
   .status {
@@ -224,7 +224,7 @@
 }
 
 .reply-form {
-  margin-top: 50px;
+  margin-top: 30px;
   display: none;
 }
 
@@ -249,6 +249,26 @@
   font-weight: bold;
   padding-bottom: 5px
 }
+
+.comment-line {
+  margin-top: 20px;
+}
+
+/* _comment */
+
+.each-comment {
+  border-top: solid 0.5px 	#ddd;
+}
+
+.comment-content {
+  font-size: 12px;
+}
+
+
+
+
+
+
 /* login-form */
   .devise-heading {
     margin-bottom: 20px;

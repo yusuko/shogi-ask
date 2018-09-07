@@ -22,12 +22,12 @@ $(document).on('turbolinks:load',function(){
     if ($(this).hasClass('open'))
       {
         $(this).removeClass('open')
-        $(this).nextAll('.reply-form').show();
+        $(this).parent('.comment-line').nextAll('.reply-form').show();
       }
     else
       {
         $(this).addClass('open')
-        $(this).nextAll('.reply-form').hide();
+        $(this).parent('.comment-line').nextAll('.reply-form').hide();
       }
   })
 
