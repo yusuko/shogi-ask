@@ -5,6 +5,6 @@
     <li class="question-time"><%= time_ago_in_words(comment.created_at) %> 前に投稿</li>
   </ul>
   <div class="comment-content">
-    <%= simple_format(comment.content) %>
+    <%= text_with_link(comment.content) %>
   </div>
 </li>

@@ -24,6 +24,8 @@ gem 'turbolinks', '5.0.1'
 gem 'jquery-turbolinks'
 gem 'uglifier', '3.2.0'
 gem 'will_paginate', '3.1.6'
+gem 'rinku'
+
 
 group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
