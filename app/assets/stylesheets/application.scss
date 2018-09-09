@@ -350,6 +350,7 @@
     margin-top: 20px;
   }
 
+
   @media (max-width: 768px) {
     .container {
       width: 100%;
@@ -376,5 +377,19 @@
     }
     h1 {
       font-size: 24px;
+    }
+    .question-bottom {
+      padding-top: 15px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    body {
+    margin-top: 145px;
+    }
+  }
+  @media (max-width: 320px) {
+    body {
+    margin-top: 140px;
     }
   }
