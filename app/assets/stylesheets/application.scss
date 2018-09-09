@@ -349,3 +349,32 @@
     font-size: 16px;
     margin-top: 20px;
   }
+
+  @media (max-width: 768px) {
+    .container {
+      width: 100%;
+      overflow: hidden;
+    }
+    .nav>li {
+      float: left;
+
+      display: inline-block;
+    }
+    .navbar-nav {
+        margin: 0;
+    }
+    .navbar-nav>li>a {
+        padding-top: 14.5px;
+        padding-bottom: 14.5px;
+    }
+    body {
+      margin-top: 100px;
+
+    }
+    .questions {
+      padding: 0px;
+    }
+    h1 {
+      font-size: 24px;
+    }
+  }

@@ -1,11 +1,13 @@
 <div class="container">
-  <div class="col-sm2">
-  </div>
-  <div class="col-sm7">
-    <h1>気軽に質問、気軽に答えよう！</h1>
-    <ol class="questions">
-    <%= render @questions %>
-    </ol>
-    <%= paginate @questions %>
+  <div class="row">
+    <div class="col-sm2">
+    </div>
+    <div class="col-sm7">
+      <h1>気軽に質問、気軽に答えよう！</h1>
+      <ol class="questions">
+      <%= render @questions %>
+      </ol>
+      <%= paginate @questions %>
+    </div>
   </div>
 </div>
