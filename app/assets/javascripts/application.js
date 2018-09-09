@@ -18,6 +18,10 @@
 
 $(document).on('turbolinks:load',function(){
 
+  var height = $('.navbar').height();
+  // bodyのpaddingにnavbarの高さを設定する
+  $('body').css('padding-top',height);
+
   $('.comment-post').click(function(){
     if ($(this).hasClass('open'))
       {
