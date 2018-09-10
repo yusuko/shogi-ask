@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.autosize
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
@@ -21,6 +22,8 @@ $(document).on('turbolinks:load',function(){
   var height = $('.navbar').height();
   // bodyのpaddingにnavbarの高さを設定する
   $('body').css('padding-top',height);
+
+  $('textarea').autosize();
 
   $('.comment-post').click(function(){
     if ($(this).hasClass('open'))
