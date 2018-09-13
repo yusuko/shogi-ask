@@ -2,8 +2,9 @@ class RepliesController < ApplicationController
   before_action :authenticate_user!
   before_action :authenticate_question_user, only: [:select_best_answer, :delete_best_answer]
   def create
-    reply = Reply.new(reply_params.merge(user_id: current_user.id))
-    redirect_after_reply_create(reply)
+    reply, replied_question = Reply.creates(reply_params.merge(user_id: current_user.id))
+    create_flash_message(reply)
+    redirect_to replied_question
   end
 
   def select_best_answer
@@ -22,18 +23,14 @@ class RepliesController < ApplicationController
     params.require(:reply).permit(:content, :question_id)
   end
 
-  def redirect_after_reply_create(reply)
-    if reply.save
-      question = reply.question
-      NotificationMailer.with(question: question).reply_notification.deliver_later
+  def create_flash_message(reply)
+    if reply
       flash[:success] = '回答が投稿されました!'
-      redirect_to(question)
     else
-      flash[:danger] = reply.errors.full_messages
-      question = Question.find(params[:reply][:question_id])
-      redirect_to(question)
+      flash[:danger] = '回答の投稿に失敗しました'
     end
   end
+      # It may be better to return reply.errors(when using Reply.new)
 
   def authenticate_question_user
     reply = Reply.find(params[:id])
