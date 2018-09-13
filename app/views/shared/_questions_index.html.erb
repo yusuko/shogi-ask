@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm2">
+    </div>
+    <div class="col-sm7">
+      <h1 class="index-title"> <%= yield(:top_message) %></h1>
+      <ol class="questions">
+      <%= render @questions %>
+      </ol>
+      <%= paginate @questions %>
+    </div>
+  </div>
+</div>
