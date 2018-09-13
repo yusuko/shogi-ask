@@ -24,8 +24,9 @@ class RepliesController < ApplicationController
 
   def redirect_after_reply_create(reply)
     if reply.save
-      flash[:success] = '回答が投稿されました!'
       question = reply.question
+      NotificationMailer.with(question: question).reply_notification.deliver_later
+      flash[:success] = '回答が投稿されました!'
       redirect_to(question)
     else
       flash[:danger] = reply.errors.full_messages
