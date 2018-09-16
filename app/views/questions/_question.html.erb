@@ -1,7 +1,6 @@
 <li class="id="question-<%= question.id %>">
-  <div class="container">
     <div class="row">
-      <div class="col-xs-2 col-sm-1 text-center question-list">
+      <div class="col-xs-2 col-sm-2 text-center question-list">
       <% if question.solved? %>
         <p class ="status solved">解決済</p>
       <% else %>
@@ -12,7 +11,7 @@
           <dd class="reply-count"><%= question.replies.to_a.count %></dd>
       </dl>
     </div>
-      <div class="col-xs-10 col-sm-7 question-list">
+      <div class="col-xs-10 col-sm-10 question-list">
         <h2 class="title"> <%= link_to question.title, question %> </h2>
         <%= render question.categories %>
         <ul class="question-bottom text-right">
@@ -24,5 +23,4 @@
         </ul>
       </div>
     </div>
-  </div>
 </li>

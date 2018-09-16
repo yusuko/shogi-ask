@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!, only: [:create]
   def index
     @questions = Question.list_with_paginate(params)
+    @categories = Category.all
   end
 
   def new

@@ -1,13 +1,31 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm2">
+    <div class="col-sm-1">
+
     </div>
-    <div class="col-sm7">
+    <div class="col-sm-7">
       <h1 class="index-title"> <%= yield(:top_message) %></h1>
       <ol class="questions">
       <%= render @questions %>
       </ol>
       <%= paginate @questions %>
+    </div>
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-2">
+
+        </div>
+        <div class="col-sm-10">
+          <ol>
+            <li class="tag">タグ一覧</li>
+            <% @categories.each do |category| %>
+              <%= render 'categories/sidebar_category', category: category %>
+            <% end %>
+          </ol>
+
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
