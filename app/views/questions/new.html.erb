@@ -24,6 +24,11 @@
 具体的な自分の将棋の強さ(初心者、5級、４段等)、どこが聞きたいことなのかを具体的に書くと回答されやすくなります。" %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :画像のアップロード %>
+    <%= f.file_field :image %>
+  </div>
+
      <%= f.submit "質問する", class: "btn btn-primary" %>
   <% end %>
 

@@ -1,4 +1,5 @@
 class Question < ApplicationRecord
+  mount_uploader :image, QuestionImageUploader
   has_many :replies
   belongs_to :user
   has_many :question_categories
