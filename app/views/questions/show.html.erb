@@ -6,7 +6,7 @@
           <h1 class="show-title"><%= @question.title %></h1>
         </div>
         <div class="row">
-          <div class="col-sm-5">
+          <div class="col-sm-6 col-xs-12">
             <ul class="list-inline">
               <% if @question.solved? %>
                 <li class ="status solved">解決済</li>
@@ -17,8 +17,13 @@
               <li class="reply-count"><%= @question.replies.to_a.count %></li>
               <li class="question-time"><%= time_ago_in_words(@question.created_at) %>前に投稿</li>
             </ul>
+            <ul class="category-list">
+              <% @categories.each do |category| %>
+                <%= render 'categories/show_category', category: category %>
+              <% end %>
+            </ul>
           </div>
-          <div class="col-sm-7 user-info">
+          <div class="col-sm-4 user-info col-xs-12">
             <ul class="list-inline pull-right">
             <li class="user-profile"><%= image_tag(@question.user.image.url, :size => "30x30") %></li>
             <li class="user-name"><%= @question.user.name %></li>
@@ -26,15 +31,19 @@
           </div>
         </div>
       </div>
+    </div>
   </div>
-</div>
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-sm-9 col-sm-offset-1">
+    <div class="col-sm-8 col-sm-offset-1 col-xs-12">
       <div class="question-content">
         <%= text_with_link(@question.content) %>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-1 col-xs-12">
       <div class="">
         <p class="reply-heading">回答 <%= @replies.to_a.count %> 件</p>
         <ol class="reply">
@@ -59,7 +68,18 @@
 
         <%= f.submit "回答する", class: "btn btn-primary center-block" %>
       <% end %>
-
+    </div>
+    <div class="col-sm-3 col-xs-12 center-block">
+      <div class="recommended-questions text-left">
+        関連する質問
+      </div>
+      <ul class="category-list">
+        <% related_questions(@categories).each do |question| %>
+          <% unless question == @question %>
+            <%= render 'questions/recommend_question', question: question %>
+          <% end %>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
