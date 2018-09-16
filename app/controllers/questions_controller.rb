@@ -22,6 +22,7 @@ class QuestionsController < ApplicationController
     @replies = @question.replies.includes(:user, :comments)
     @reply = Reply.new
     @comment = Comment.new
+    @categories = @question.categories
   end
 
   private

@@ -189,6 +189,13 @@
    font-weight: bold;
  }
 
+ .category-list {
+   padding: 5px 0px;
+   .category {
+     font-size: 12px;
+   }
+ }
+
  .unsolved-show {
    background-color: #ddd
  }
@@ -206,10 +213,6 @@
 
  .user-info {
    margin-top: 13px;
- }
-
- .user-profile {
-   margin-left: 175px;
  }
 
  .user-name {
@@ -245,6 +248,36 @@
   display: none;
 }
 
+/* recommended_questions */
+
+.recommended-question {
+  padding: 8px 0px;
+  .status {
+    padding: 0px 5px;
+  }
+}
+
+.recommended-questions {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  padding: 10px 0px 10px 16px;
+}
+
+.recommended-sub-info {
+  .status {
+    font-size: 12px;
+  }
+  font-size: 12px;
+}
+
+.recommended-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.recommended-content {
+  font-size: 12px;
+}
 
 /* _reply */
  .each-reply, .best-reply-summary {

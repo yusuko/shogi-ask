@@ -1,0 +1,19 @@
+<li class="recommended-question">
+  <ul class="list-inline recommended-sub-info">
+    <li>
+    <% if question.solved? %>
+      <p class ="status solved">解決済</p>
+    <% else %>
+      <p class ="status unsolved">受付中</p>
+    <% end %>
+    </li>
+    <li><%= question.replies.to_a.count %> 回答</li>
+  </ul>
+  <div class="recommended-title">
+    <%= link_to( question.title, question) %>
+
+  </div>
+  <div class="recommended-content">
+    <%= question.content.truncate(20) %>
+  </div>
+</li>
