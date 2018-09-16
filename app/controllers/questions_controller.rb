@@ -32,7 +32,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:title, :content)
+    params.require(:question).permit(:title, :content, :image)
   end
 
   def redirect_after_question_create(question, category_id)

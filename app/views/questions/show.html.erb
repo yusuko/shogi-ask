@@ -39,6 +39,9 @@
     <div class="col-sm-8 col-sm-offset-1 col-xs-12">
       <div class="question-content">
         <%= text_with_link(@question.content) %>
+        <% if @question.image %>
+          <%= image_tag(@question.image.url) %>
+        <% end %>
       </div>
     </div>
   </div>
