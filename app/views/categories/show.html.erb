@@ -1,2 +1,3 @@
+<% set_meta_tags title: full_title("#{@category.name}に関する質問"), description: "#{@category.name}に関するたくさんの質問が一覧で確認できます。#{@category.name}に関する知恵や知識をお楽しみ下さい。将棋の上達や入門に役立てましょう。" %>
 <% provide(:top_message, "#{@category.name}に関する質問") %>
 <%= render 'shared/questions_index' %>
