@@ -3,7 +3,8 @@
 Rails.application.routes.draw do
   resources :categories, only: [:show]
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  get '/auth/:provider/callback', to: 'omniauth_callbacks#login_with_twitter'
   resources :users, only: [:show]
   get 'users/setting/profile' => 'users#profile'
   post 'users/setting/profile' => 'users#edit_profile'

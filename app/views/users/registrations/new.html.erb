@@ -1,8 +1,15 @@
 <% set_meta_tags title: full_title('新規会員登録'), description: '将棋アスクに無料会員登録すると、将棋アスクのサービスがさらに便利にご利用いただけます。アカウントをお持ちでない方はいますぐ無料で登録しましょう。' %>
+<% provide(:login_or_new, "登録") %>
 <div class="container">
   <h2 class="devise-heading">新規会員登録</h2>
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-5 col-xs-12">
+      <%= render 'shared/twitter_login_form' %>
+    </div>
+    <div class="col-sm-4 col-xs-12">
+      <div class="text-center">
+        <p class="mail-login-title">メールアドレスで登録する</p>
+      </div>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
         <div class="form-group">
@@ -18,7 +25,7 @@
           <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
         </div>
         <div class="actions">
-          <%= f.submit "登録する", class: "btn-lg btn-primary center-block login-btn" %>
+          <%= f.submit "登録する", class: "btn btn-primary center-block login-btn" %>
         </div>
       <% end %>
       <div class="link-from-devise text-center">

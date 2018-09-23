@@ -1,8 +1,15 @@
 <% set_meta_tags title: full_title('ログイン'), description: '将棋アスクにログインすると、将棋アスクのサービスがさらに便利にご利用いただけます。アカウントをお持ちでない方もいますぐ無料で登録しましょう。' %>
+<% provide(:login_or_new, "ログイン") %>
 <div class="container">
   <h2 class="devise-heading">ログイン</h2>
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-5 col-xs-12">
+      <%= render 'shared/twitter_login_form' %>
+    </div>
+    <div class="col-sm-4 col-xs-12">
+      <div class="text-center">
+        <p class="mail-login-title">メールアドレスでログインする</p>
+      </div>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-group">
           <%= f.label :メールアドレス %>
@@ -22,7 +29,7 @@
         <% end -%>
 
         <div class="actions">
-          <%= f.submit "ログイン", class: "btn-lg btn-primary center-block login-btn" %>
+          <%= f.submit "ログイン", class: "btn btn-primary center-block login-btn" %>
         </div>
       <% end %>
       <ul class="link-from-devise list-inline text-center">
