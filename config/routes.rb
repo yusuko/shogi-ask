@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root 'questions#index'
   get '/about' => 'static_pages#about'
   get '/contact' => 'static_pages#contact'
-  post '/comments/:id' => 'comments#create', as: 'comments'
+  post '/reply/:id/comment' => 'comments#create', as: 'comments'
   post '/replies/:id' => 'replies#select_best_answer', as: 'select_best_answer'
   delete '/replies/:id' => 'replies#delete_best_answer', as: 'delete_best_answer'
 
