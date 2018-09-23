@@ -2,6 +2,6 @@
   <div class="">
     <p class="twitter-login-title">SNSアカウントで<%= yield(:login_or_new) %>する</p>
   </div>
-  <img src="/assets/twitter_icon.png" alt="ツイッターログイン", width="32px", height="32px">
+  <%= link_to image_tag("/assets/twitter_icon.png", alt: "ツイッターログイン", width: "32px", height: "32px"), user_twitter_omniauth_authorize_path %>
   <span><%= link_to "Twitterで登録/ログイン", user_twitter_omniauth_authorize_path, class: "btn center-block  twitter-login" %></span>
 </div>
