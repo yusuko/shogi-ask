@@ -9,14 +9,10 @@
 
   <div class="form-group">
     <p class="control-label"><b>カテゴリー</b></p>
-    <div class="form-inline">
-      <label class="checkbox-inline"><input type="checkbox" name="category" value= 1> 勉強法</label>
-      <label class="checkbox-inline"><input type="checkbox" name="category" value= 2> 定跡</label>
-      <label class="checkbox-inline"><input type="checkbox" name="category" value= 3> プロ棋士</label>
-      <label class="checkbox-inline"><input type="checkbox" name="category" value= 4> プロの対局</label>
-      <label class="checkbox-inline"><input type="checkbox" name="category" value= 5> 自分の対局</label>
-      <label class="checkbox-inline"><input type="checkbox" name="category" value= 6> その他</label>
-    </div>
+      <% Category.all.each do |c| %>
+        <%= f.check_box :category_ids, { multiple: true, :checked => @categories.present? ? @categories.include?(c) : false, include_hidden: false }, c.id %>
+        <%= c.name %>
+      <% end %>
   </div>
 
   <div class="form-group">
@@ -32,5 +28,4 @@
 
      <%= f.submit "質問する", class: "btn btn-primary" %>
   <% end %>
-
 </div>

@@ -14,8 +14,11 @@ class Question < ApplicationRecord
             .order(id: :desc)
   end
 
-  def create_category(category_id)
-    QuestionCategory.create(category_id: category_id, question_id: id)
+  def create_categories(category_params)
+    return unless category_params[:category_ids]
+    category_params[:category_ids].each do |category_id|
+      QuestionCategory.create(category_id: category_id, question_id: id)
+    end
   end
 
   def solved?

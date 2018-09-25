@@ -9,12 +9,11 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
-    @category = Category.new
   end
 
   def create
     question = Question.new(question_params.merge(user_id: current_user.id))
-    redirect_after_question_create(question, category_params.to_i)
+    redirect_after_question_create(question, category_params)
   end
 
   def show
@@ -28,16 +27,16 @@ class QuestionsController < ApplicationController
   private
 
   def category_params
-    params.require(:category)
+    params.require(:question).permit(category_ids: [])
   end
 
   def question_params
     params.require(:question).permit(:title, :content, :image)
   end
 
-  def redirect_after_question_create(question, category_id)
+  def redirect_after_question_create(question, category_params)
     if question.save
-      question.create_category(category_id)
+      question.create_categories(category_params)
       flash[:success] = '質問が投稿されました!'
       redirect_to(root_url)
     else
