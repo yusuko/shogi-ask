@@ -22,7 +22,7 @@
   <%= form_for(@comment, url: comments_path(reply)) do |f| %>
 
     <div class="form-group">
-      <%= f.text_field :content, class: 'form-control', placeholder: "回答に対するコメントを入力してください。"  %>
+      <%= f.text_area :content, class: 'form-control', placeholder: "回答に対するコメントを入力してください。"  %>
     </div>
 
     <%= f.submit "コメントする", class: "btn btn-primary" %>
