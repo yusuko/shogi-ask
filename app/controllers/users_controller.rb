@@ -10,6 +10,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    redis = Redis.new
+    redis.set("user:#{@user.id}:name", @user.name)
+    # irb(main):007:0> redis.get("user:1:name")
+    # => "Yusuke"
   end
 
   private
